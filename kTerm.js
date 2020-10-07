@@ -55,7 +55,7 @@ if (data.showBattery) {
 }
 
 if (data.showEvents) {
-    const calendarEvents = await CalendarEvent.thisWeek([])
+    const calendarEvents = await CalendarEvent.today([])
     let events = []
 
     addTextStackWithPrefix("cat events")
@@ -139,10 +139,11 @@ function formatTime(date) {
     let df = new DateFormatter()
     df.useNoDateStyle()
     df.useShortTimeStyle()
-    if (date.getHours() < 10) {
-        return "0" + df.string(date)
+    var d = df.string(date)
+    if (d.length < 5) {
+        return "0" + d
     }
-    return df.string(date)
+    return d
 }
 
 if (config.runsInWidget) {

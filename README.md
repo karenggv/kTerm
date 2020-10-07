@@ -1,6 +1,7 @@
 # kTerm
 
-Scriptable widget 
+## Scriptable widget 
+*Widget Access to Calendar must be Granted*
 
 ![Widget](kTerm.png)
 
